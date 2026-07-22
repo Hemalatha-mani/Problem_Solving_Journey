@@ -1,0 +1,21 @@
+2520.Count the Digits That Divide a Number
+
+class Solution {
+    public int countDigits(int num) {
+        HashMap<Integer,Integer> map=new HashMap<>();
+        int ori=num;
+        while(num!=0){
+            int dig=num%10;
+            map.put(dig,map.getOrDefault(dig,0)+1);
+            num=num/10;
+        }
+        int count=0;
+        for(int key:map.keySet()){
+            if(ori%key==0){
+                count=count+map.get(key);
+            }
+        }
+        return count;
+        
+    }
+}
