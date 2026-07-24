@@ -1,0 +1,16 @@
+367. Valid Perfect Square
+
+
+class Solution {
+    public boolean isPerfectSquare(int num) {
+        if(num<0){
+            return false;
+        }
+        int a=(int)(Math.sqrt(num));
+        if(a*a == num){
+            return true;
+        }
+        return false;
+        
+    }
+}
