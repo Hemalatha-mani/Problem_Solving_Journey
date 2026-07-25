@@ -1,0 +1,26 @@
+3658. GCD of Odd and Even Sums
+
+class Solution {
+    public int gcdOfOddEvenSums(int n) {
+        int so=0;
+        int se=0;
+        int o=1;
+        int e=2;
+        for(int i=0;i<n;i++){
+            so=so+o;
+            se=se+e;
+            o=o+2;
+            e=e+2;
+        }
+        
+        int max=Integer.MIN_VALUE;
+        for(int i=1;i<=so;i++){
+            if(so%i==0 & se%i==0 &i>max){
+                
+                max=i;
+            }
+        }
+        return max;
+        
+    }
+}
