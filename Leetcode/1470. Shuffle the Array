@@ -1,0 +1,26 @@
+1470. Shuffle the Array
+
+class Solution {
+    public int[] shuffle(int[] nums, int n) {
+        ArrayList<Integer> list =new ArrayList<>();
+        int a[]=new int[nums.length/2];
+        int b[]=new int[nums.length/2];
+        for(int i=0;i<nums.length/2;i++){
+            a[i]=nums[i];
+        }
+        for(int i=0;i<nums.length/2;i++){
+            b[i]=nums[i+n];
+        }
+        for(int i=0;i<nums.length/2;i++){
+            list.add(a[i]);
+            list.add(b[i]);
+        }
+        int ans[]=new int[nums.length];
+        for(int i=0;i<nums.length;i++){
+            ans[i]=list.get(i);
+        }
+        return ans;
+        
+        
+    }
+}
