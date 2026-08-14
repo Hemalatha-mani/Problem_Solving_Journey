@@ -1,0 +1,30 @@
+747. Largest Number At Least Twice of Others
+
+class Solution {
+    public int dominantIndex(int[] nums) {
+        int max=Integer.MIN_VALUE;
+        int index=-1;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]>max){
+                max=nums[i];
+                index=i;
+            }
+           
+        }
+        //int count=0;
+        for(int i=0;i<nums.length;i++){
+            if(i!=index){
+                if(max>=2*nums[i]){
+                    //count=i;
+                    continue;
+                }
+                else{
+                    return -1;
+                }
+            }
+            
+        }
+        return index;
+        
+    }
+}
