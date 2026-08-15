@@ -1,0 +1,11 @@
+58. Length of Last Word
+
+class Solution {
+    public int lengthOfLastWord(String s) {
+        s=s.trim();
+        String[] word=s.split("\\s+");
+        int a=word.length;
+        String b=word[a-1];
+        return b.length();
+    }
+}
