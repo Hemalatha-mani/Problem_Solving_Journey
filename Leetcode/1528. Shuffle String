@@ -1,0 +1,21 @@
+1528. Shuffle String
+
+class Solution {
+    public String restoreString(String s, int[] indices) {
+   
+        char s1[]=s.toCharArray();
+        char ans[]=new char[s.length()];
+        String ans1="";
+        for(int i=0;i<indices.length;i++){
+            int g=indices[i];
+            ans[g]=s1[i];
+        }
+        for(int j=0;j<ans.length;j++){
+            ans1=ans1+ans[j];
+
+        }
+        return ans1;
+
+        
+    }
+}
