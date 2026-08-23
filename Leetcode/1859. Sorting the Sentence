@@ -1,0 +1,55 @@
+1859. Sorting the Sentence
+
+class Solution {
+    public String sortSentence(String s) {
+        String a[]=s.split(" ");
+        String b[]=new String[a.length];
+        for(int i=0;i<a.length;i++){
+            if(a[i].endsWith("1")){
+                a[i]=a[i].substring(0,a[i].length()-1);
+                b[0]=a[i];
+            }
+            else if(a[i].endsWith("2")){
+                a[i]=a[i].substring(0,a[i].length()-1);
+                b[1]=a[i];
+            }
+            else if(a[i].endsWith("3")){
+                a[i]=a[i].substring(0,a[i].length()-1);
+                b[2]=a[i];
+            }
+            
+            else if(a[i].endsWith("4")){
+                a[i]=a[i].substring(0,a[i].length()-1);
+                b[3]=a[i];
+            }
+            else if(a[i].endsWith("5")){
+                a[i]=a[i].substring(0,a[i].length()-1);
+                b[4]=a[i];
+            }
+            else if(a[i].endsWith("6")){
+                a[i]=a[i].substring(0,a[i].length()-1);
+                b[5]=a[i];
+            }
+            else if(a[i].endsWith("7")){
+                a[i]=a[i].substring(0,a[i].length()-1);
+                b[6]=a[i];
+            }
+            else if(a[i].endsWith("8")){
+                a[i]=a[i].substring(0,a[i].length()-1);
+                b[7]=a[i];
+            }
+            else if(a[i].endsWith("9")){
+                a[i]=a[i].substring(0,a[i].length()-1);
+                b[8]=a[i];
+            }
+        }
+        String ans="";
+        for(int i=0;i<b.length;i++){
+            ans=ans+b[i];
+            if(i!=b.length-1){
+                ans=ans+" ";
+            }
+        }
+        return ans;
+    }
+}
