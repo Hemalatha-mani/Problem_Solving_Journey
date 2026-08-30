@@ -1,0 +1,34 @@
+925. Long Pressed Name
+
+class Solution {
+    public boolean isLongPressedName(String name, String typed) {
+        // LinkedHashMap<Character,Integer> m=new LinkedHashMap<>();
+        // for(int i=0;i<typed.length();i++){
+        //     char ch=typed.charAt(i);
+        //     m.put(ch,m.getOrDefault(ch,0)+1);
+        // }
+        // String s="";
+        // for(char c:m.keySet()){
+        //     s=s+c;
+        // }
+        // if(name.equals(s)){
+        //     return true;
+        // }
+        // return false;
+        int i=0,j=0;
+        while(j<typed.length()){
+            if(i<name.length() && name.charAt(i)==typed.charAt(j)){
+                i++;
+                j++;
+            }
+            else if(j>0 && typed.charAt(j)==typed.charAt(j-1)){
+                j++;
+            }
+            else{
+                return false;
+            }
+        }
+        return i==name.length();
+        
+    }
+}
