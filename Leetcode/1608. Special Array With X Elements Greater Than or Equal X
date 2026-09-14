@@ -1,0 +1,22 @@
+1608. Special Array With X Elements Greater Than or Equal X
+
+class Solution {
+    public int specialArray(int[] nums) {
+        int a=nums.length;
+        int count=-1;
+        for(int i=0;i<=a;i++){
+            int c=0;
+            for(int n:nums){
+                if(n>=i){
+                    c++;
+                }
+            }
+            if(c==i){
+                count=c;
+            }
+        }
+        
+        return count;
+        
+    }
+}
