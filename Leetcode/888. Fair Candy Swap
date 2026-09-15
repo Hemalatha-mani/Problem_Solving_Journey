@@ -1,0 +1,27 @@
+888. Fair Candy Swap
+
+class Solution {
+    public int[] fairCandySwap(int[] aliceSizes, int[] bobSizes) {
+        int as=0;
+        int bs=0;
+        for(int x:aliceSizes){
+            as+=x;
+        }
+        for(int x:bobSizes){
+            bs+=x;
+        }
+        int diff=(bs-as)/2;
+        HashSet<Integer> set =new HashSet<>();
+        for(int x:bobSizes){
+            set.add(x);
+        }
+        for(int x:aliceSizes){
+            int b=x+diff;
+            if(set.contains(b)){
+                return new int[]{x,b};
+            }
+        }
+        return new int[]{};
+        
+    }
+}
