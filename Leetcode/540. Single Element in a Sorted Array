@@ -1,0 +1,21 @@
+540. Single Element in a Sorted Array
+
+class Solution {
+    public int singleNonDuplicate(int[] nums) {
+        HashMap<Integer,Integer> map=new HashMap<>();
+        for(int n:nums){
+            map.put(n,map.getOrDefault(n,0)+1);
+        }
+        int ans=0;
+        for(int k:map.keySet()){
+            if(map.get(k)==1){
+                ans=k;
+                break;
+
+            }
+        }
+        return ans;
+
+        
+    }
+}
