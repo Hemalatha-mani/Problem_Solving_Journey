@@ -1,0 +1,50 @@
+34. Find First and Last Position of Element in Sorted Array
+
+class Solution {
+    static int first(int nums[],int target){
+        int l=0;
+        int r=nums.length-1;
+        int ans=-1;
+        while(l<=r){
+            int m=l+(r-l)/2;
+            if(nums[m]==target){
+                ans=m;
+                r=m-1;
+            }
+            else if(nums[m]<target){
+                l=m+1;
+            }
+            else{
+                r=m-1;
+            }
+        }
+        return ans;
+    }
+    static int findlast(int[] nums,int target){
+        int l=0;
+        int r=nums.length-1;
+        int ans=-1;
+        while(l<=r){
+            int m=l+(r-l)/2;
+            if(nums[m]==target){
+                ans=m;
+                l=m+1;
+            }
+            else if(nums[m]<target){
+                l=m+1;
+            }
+            else{
+                r=m-1;
+            }
+        }
+        return ans;
+    }
+    public int[] searchRange(int[] nums, int target) {
+        
+        int f=first(nums,target);
+        int l=findlast(nums,target);
+        int ans[]={f,l};
+        return ans;
+        
+    }
+}
