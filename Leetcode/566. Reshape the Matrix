@@ -1,0 +1,27 @@
+566. Reshape the Matrix
+
+class Solution {
+    public int[][] matrixReshape(int[][] mat, int r, int c) {
+        int row=mat.length;
+        int col=mat[0].length;
+        if(r*c != row*col){
+            return mat;
+        }
+        ArrayList<Integer> a=new ArrayList<>();
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                a.add(mat[i][j]);
+            }
+        }
+        int ans[][]=new int[r][c];
+        int ind=0;
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c;j++){
+                ans[i][j]=a.get(ind++);
+            }
+        }
+        return ans;
+
+        
+    }
+}
