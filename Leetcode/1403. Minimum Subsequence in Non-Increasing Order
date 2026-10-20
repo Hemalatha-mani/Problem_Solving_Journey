@@ -1,0 +1,21 @@
+1403. Minimum Subsequence in Non-Increasing Order
+
+class Solution {
+    public List<Integer> minSubsequence(int[] nums) {
+        Arrays.sort(nums);
+        int tot=0;
+        for(int num:nums){
+            tot=tot+num;
+        }
+        List<Integer> res=new ArrayList<>();
+        int sum=0;
+        for(int i=nums.length-1;i>=0;i--){
+            sum=sum+nums[i];
+            res.add(nums[i]);
+            if(sum>tot-sum){
+                break;
+            }
+        }
+        return res;
+    }
+}
